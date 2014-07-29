@@ -1,0 +1,5 @@
+set -x
+ruby ../ruby/jojo.rb h4c4.jojo > test_install
+dos2unix test_install
+chmod +x test_install
+./test_install

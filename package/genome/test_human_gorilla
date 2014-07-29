@@ -1,0 +1,6 @@
+ruby ../ruby/pconfig.rb human_gorilla.config 100000 100 ../ruby/100k20w.config 20 > doit
+dos2unix doit
+chmod +x doit
+#date > START_TIME.txt
+#./doit
+#date > END_TIME.txt

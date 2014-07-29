@@ -1,0 +1,5 @@
+ls */*.png > x.pnglist
+ruby ../ruby/pnglist.rb > dopng
+dos2unix dopng
+chmod +x dopng
+./dopng

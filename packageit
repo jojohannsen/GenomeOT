@@ -1,0 +1,19 @@
+set -x
+mkdir package
+cp c:/genome_rearrangement/v13/package/chrcompare.exe package
+mkdir package/c
+cp c:/genome_rearrangement/v13/package/c/Makefile package/c
+cp c:/genome_rearrangement/v13/package/c/*.c package/c
+cp c:/genome_rearrangement/v13/package/c/*.h package/c
+mkdir package/ruby
+cp c:/genome_rearrangement/v13/package/ruby/*.* package/ruby
+mkdir package/test
+cp c:/genome_rearrangement/v13/package/test/h4c4.jojo package/test
+cp c:/genome_rearrangement/v13/package/test/h4.fa package/test
+cp c:/genome_rearrangement/v13/package/test/c4.fa package/test
+cp c:/genome_rearrangement/v13/package/test/testit package/test
+mkdir package/genome
+cp c:/genome_rearrangement/v13/package/genome/test* package/genome
+cp c:/genome_rearrangement/v13/package/genome/*.config package/genome
+cp c:/genome_rearrangement/v13/package/genome/mkpng package/genome
+echo "cd package/genome, then 'testit'"

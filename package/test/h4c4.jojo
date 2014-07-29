@@ -1,0 +1,15 @@
+#
+#  Test data,
+#
+#    h4.fa from chr4.fa (ucsc), Comparing Human Chromosome 4 to Chimp 4
+#
+#       head -1200000 chr4.fa > h4x
+#       tail -600000 h4x > h4.fa
+#
+#    c4.fa from ncbi chimp chromosome 4
+#
+#       head -1000000 chimp4.fa > c4x
+#       tail -500000 c4x > c4.fa
+#
+species Human h4.fa
+species Chimp c4.fa
