@@ -157,7 +157,7 @@ NODE* create_node(NODE* father, DBL_WORD start, DBL_WORD end, DBL_WORD position,
    node->path_position    = position;
    node->edge_label_start = start;
    node->edge_label_end   = end;
-   node->leaf_count       = 0; /* JJ added */
+   node->leaf_count       = 0; /* JJ added - test */
    node->ignore_NODE      = 0; /* JJ added */
    node->left_char        = left_char; /* JJ added */
    node->is_left_diverse  = 0;
