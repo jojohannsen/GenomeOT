@@ -32,9 +32,19 @@
 <a name="genomes-over-time" class="anchor" href="#genomes-over-time"><span class="octicon octicon-link"></span></a>Genomes Over Time</h3>
 
 <p>At some level, genomes are incredibly stable over time.  For example, chromosome 8 has a layout that has not changed in millions of years.</p>
-
+<p>
+Species may have different numbers and sizes of chromosomes, but within those chromosomes are very large sections with a clear relationship to each other.  This visualization is specific to the underlying genome re-arrangement data, which is derived from chromosome sequences in FASTA format.  The underlying algorithm gives a "nearness" distance between large segments, which determines pixel color in the visualization.
+</p>
+<p>
+In practice, this means the underlying data has a limited number of configurations that result in a clear visualization of the genome rearrangement between two species.  The number of usable configurations decreases as the distance between segments grows.
+</p>
 <p>The scripts here are a way to visualize relationships between species by comparing chromosomes.  The input to the script is any number of FASTA chromosome files from public sites, and a configuration file listing which chromosomes to compare.  The output is a set of images for each comparison.</p>
-
+<h3>Underlying Algorithms and Speed</h3>
+<p>Two chromosomes can be compared in linear time by creating a suffix tree for the first chromosome (linear time construction) then scanning the second chromosome counting unlikely matches in the forward or reverse direction within the suffix tree (linear time scan, linear time lookup in suffix tree).  These counts represent the likelihood of common ancestry, and whether the matching section is inverted between the two species.
+</p>
+<p>
+This underlying genomic rearrangement data is processed into a visualization, green representing forward matches, red representing reverse complement matches.
+</p>
 <h3>
 <a name="example-configuration-files" class="anchor" href="#example-configuration-files"><span class="octicon octicon-link"></span></a>Example Configuration files</h3>
 
