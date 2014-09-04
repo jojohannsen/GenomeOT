@@ -15,7 +15,15 @@ void Usage()
 }
 
 
-char rc( char cval )
+// 
+//  complement -- reverse complement a character
+//
+//    A => T
+//    C => G
+//    G => C
+//    T => A
+//
+char complement( char cval )
 {
 	if (cval == 'A') return 'T';
 	else if (cval == 'C') return 'G';
@@ -29,17 +37,23 @@ void reverse_complement( char* buf, int window_size )
 	int first_offset = 0;
 	int last_offset = window_size - 1;
 	char temp;
+	// first_offset and last_offset move in toward center, then loop exits
 	while (first_offset < last_offset)
 	{
+		// save the value we are about to overwrite, the "first_offset" value
 		temp = *(buf + first_offset);
-		*(buf + first_offset) = rc(*(buf + last_offset));
-		*(buf + last_offset) = rc( temp );
+		// overwrite "first_offset" value with reverse complement of the "last_offset" value
+		*(buf + first_offset) = complement(*(buf + last_offset));
+		// overwrite "last_offset" value with reverse complement of our "temp" save of the original "first_offset" value
+		*(buf + last_offset) = complement( temp );
+		// move pointers in toward center
 		first_offset++;
 		last_offset--;
 	}
+	// in case where there is a lone character in the center, replace it with it's complement
 	if (first_offset == last_offset)
 	{
-		*(buf + first_offset) = rc(*(buf + first_offset));
+		*(buf + first_offset) = complement(*(buf + first_offset));
 	}
 }
 
