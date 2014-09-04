@@ -7,6 +7,8 @@ CENTROMERE = centromere
 CHRCOMPARE = chrcompare
 ST_SCAN = st_scan
 
+all: ${EXECNAME} ${CENTROMERE} ${CHRCOMPARE} ${ST_SCAN}
+
 suffixtree:	main.o suffix_tree.o
 	${COMPILER} ${DFLAGS} main.o suffix_tree.o ${OFLAGS} ${EXECNAME}
 

@@ -269,7 +269,11 @@ void generate_counts( SUFFIX_TREE* tree )
  *
  *  Internally, has in_comment, set to true when '>' encountered, resets with '\n' (all characters in between ignored)
  */
-DBL_WORD counts_fread( char* data_buffer, DBL_WORD number_bytes, FILE* file, DBL_WORD overlap )
+DBL_WORD counts_fread( 
+	unsigned char* data_buffer, 
+	DBL_WORD number_bytes, 
+	FILE* file, 
+	DBL_WORD overlap )
 {
 	DBL_WORD bytes_read = 0;
 	int in_comment = 0;

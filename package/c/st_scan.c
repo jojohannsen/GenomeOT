@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
 	int backwardCount = 0;
 
 	/* internal data */
-	SUFFIX_TREE* tree = NULL;;
+	SUFFIX_TREE* tree = NULL;
 	FILE* file = NULL;
 	FILE* fileToScan = NULL;
 	unsigned char* data_buffer = NULL;
